@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            
+
+            <Label
+                Text="BMI Calculator"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label Text="Check the box if you are female:" HorizontalOptions="Center"></Label>
+            <CheckBox x:Name="gender" IsChecked="False" HorizontalOptions="Center"></CheckBox>
+
+            <Label Text="Weight (in kg):" HorizontalOptions="Center"></Label>
+            <Label BindingContext="{x:Reference weight}" Text="{Binding Value}" FontSize="30" HorizontalOptions="Center"></Label>
+            <Stepper x:Name="weight" Value="60" HorizontalOptions="Center"></Stepper>
+
+            <Label Text="Height (in cm):" HorizontalOptions="Center"></Label>
+            <Label BindingContext="{x:Reference height}" Text="{Binding Value}" FontSize="30" HorizontalOptions="Center"></Label>
+            <Slider x:Name="height" Maximum="300"></Slider>
+
+            <Button Text="Calculate" Margin="40" Clicked="Button_Clicked"></Button>
+
+            <Label Text="Your BMI is:" HorizontalOptions="Center"></Label>
+            <Label x:Name="answer" FontSize="50" BackgroundColor="White" Text="" HorizontalOptions="Center"></Label>
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
